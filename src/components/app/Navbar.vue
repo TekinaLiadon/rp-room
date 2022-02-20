@@ -2,25 +2,40 @@
   <div>
     <Menubar :model="items">
       <template #start>
-        <img alt="logo" src="https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png" height="40" class="mr-2">
+        <Button icon="pi pi-arrow-right" @click="visibleLeft = true" class="mr-2" />
       </template>
       <template #end>
-        f
+        <Button label="Войти" icon="pi pi-user" class="p-button-info login" />
+        <Button label="Регистрация" icon="pi pi-user" class="p-button-info" />
       </template>
     </Menubar>
+    <Sidebar v-model:visible="visibleLeft" :baseZIndex="1000" class="sidebar-rp">
+      <h3>Персонажи в игре</h3>
+      <p>Никого нет</p>
+      <Button label="Помощник по майнкрафту" class="p-button-link" />
+      <br>
+      <Button label="Калькулятор роста" class="p-button-link" />
+      <h3>Недавняя активность</h3>
+      <Button label="RedKey" class="p-button-link" />
+    </Sidebar>
   </div>
 </template>
 
 <script>
+import Sidebar from 'primevue/sidebar'
+import Button from 'primevue/button'
 import Menubar from 'primevue/menubar'
 
 export default {
   name: 'Navbar',
   components: {
-    Menubar
+    Menubar,
+    Button,
+    Sidebar
   },
   data () {
     return {
+      visibleLeft: false,
       items: [
         {
           label: 'Главная',
@@ -50,5 +65,7 @@ export default {
 </script>
 
 <style scoped>
-
+.login {
+  margin-right: 1rem;
+}
 </style>
