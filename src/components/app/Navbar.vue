@@ -2,21 +2,21 @@
   <div>
     <Menubar :model="items">
       <template #start>
-        <Button icon="pi pi-arrow-right" @click="visibleLeft = true" class="mr-2" />
+        <Button icon="pi pi-arrow-right" @click="visibleLeft = true" class="mr-2"/>
       </template>
       <template #end>
-        <Button label="Войти" icon="pi pi-user" class="p-button-info login" />
-        <Button label="Регистрация" icon="pi pi-user" class="p-button-info" />
+        <Button label="Войти" icon="pi pi-user" class="p-button-info login"/>
+        <Button label="Регистрация" icon="pi pi-user" class="p-button-info"/>
       </template>
     </Menubar>
     <Sidebar v-model:visible="visibleLeft" :baseZIndex="1000" class="sidebar-rp">
       <h3>Персонажи в игре</h3>
       <p>Никого нет</p>
-      <Button label="Помощник по майнкрафту" class="p-button-link" />
+      <Button label="Помощник по майнкрафту" class="p-button-link"/>
       <br>
-      <Button label="Калькулятор роста" class="p-button-link" />
+      <Button label="Калькулятор роста" class="p-button-link"/>
       <h3>Недавняя активность</h3>
-      <Button label="RedKey" class="p-button-link" />
+      <Button label="RedKey" class="p-button-link"/>
     </Sidebar>
   </div>
 </template>
